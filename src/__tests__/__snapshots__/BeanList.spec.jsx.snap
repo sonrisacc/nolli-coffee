@@ -4,12 +4,17 @@ exports[`BeanList renders correctly 1`] = `
 <div
   className="beanList"
 >
-  <h1>
-    Search your beans!
-  </h1>
-  <input
-    placeholder="Search"
-    type="text"
-  />
+  <header>
+    <h1>
+      Search your beans!
+    </h1>
+    <input
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+      value=""
+    />
+  </header>
+  <div />
 </div>
 `;
