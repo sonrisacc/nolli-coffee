@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeanList renders correctly 1`] = `
+<div
+  className="beanList"
+>
+  <h1>
+    Search your beans!
+  </h1>
+  <input
+    placeholder="Search"
+    type="text"
+  />
+</div>
+`;
