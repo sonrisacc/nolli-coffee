@@ -1,0 +1,17 @@
+# folder #
+node_modules/
+public/bundle.js
+public/*bundle*
+
+# system files #
+.DS_Store
+.DS_Store?
+*.bundle.js
+
+# config files #
+.eslintrc.json
+.eslintignore
+.editorconfig
+.babelrc
+webpack.config.js
+yarn.lock
