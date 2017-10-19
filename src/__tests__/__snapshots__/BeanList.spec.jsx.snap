@@ -16,138 +16,48 @@ exports[`BeanList renders correctly 1`] = `
     />
   </header>
   <div>
-    <div
-      className="sc-bdVaJa jfzRHo"
-    >
-      <img
-        alt="Sumatra BeanCard"
-        className="sc-bwzfXH cSKlVC"
-        src="https://goo.gl/vxTdPV"
-      />
-      <div>
-        <h3>
-          Sumatra
-        </h3>
-        <h4>
-          (
-          Indonesia
-          )
-        </h4>
-        <p>
-          Dark roast
-        </p>
-      </div>
-    </div>
-    <div
-      className="sc-bdVaJa jfzRHo"
-    >
-      <img
-        alt="Costa Rica BeanCard"
-        className="sc-bwzfXH cSKlVC"
-        src="https://goo.gl/TXRMV5"
-      />
-      <div>
-        <h3>
-          Costa Rica
-        </h3>
-        <h4>
-          (
-          Costa Rica
-          )
-        </h4>
-        <p>
-          Dark roast
-        </p>
-      </div>
-    </div>
-    <div
-      className="sc-bdVaJa jfzRHo"
-    >
-      <img
-        alt="Kenya BeanCard"
-        className="sc-bwzfXH cSKlVC"
-        src="https://goo.gl/vKVnG7"
-      />
-      <div>
-        <h3>
-          Kenya
-        </h3>
-        <h4>
-          (
-          Indonesia
-          )
-        </h4>
-        <p>
-          Dark roast
-        </p>
-      </div>
-    </div>
-    <div
-      className="sc-bdVaJa jfzRHo"
-    >
-      <img
-        alt="Kenya BeanCard"
-        className="sc-bwzfXH cSKlVC"
-        src="https://goo.gl/vKVnG7"
-      />
-      <div>
-        <h3>
-          Kenya
-        </h3>
-        <h4>
-          (
-          Indonesia
-          )
-        </h4>
-        <p>
-          Dark roast
-        </p>
-      </div>
-    </div>
-    <div
-      className="sc-bdVaJa jfzRHo"
-    >
-      <img
-        alt="Kenya BeanCard"
-        className="sc-bwzfXH cSKlVC"
-        src="https://goo.gl/vKVnG7"
-      />
-      <div>
-        <h3>
-          Kenya
-        </h3>
-        <h4>
-          (
-          Indonesia
-          )
-        </h4>
-        <p>
-          Dark roast
-        </p>
-      </div>
-    </div>
-    <div
-      className="sc-bdVaJa jfzRHo"
-    >
-      <img
-        alt="Kenya BeanCard"
-        className="sc-bwzfXH cSKlVC"
-        src="https://goo.gl/vKVnG7"
-      />
-      <div>
-        <h3>
-          Kenya
-        </h3>
-        <h4>
-          (
-          Indonesia
-          )
-        </h4>
-        <p>
-          Dark roast
-        </p>
-      </div>
-    </div>
+    <BeanCard
+      description="Dark roast"
+      id="1"
+      name="Sumatra"
+      region="Indonesia"
+      thumbnail="https://goo.gl/vxTdPV"
+    />
+    <BeanCard
+      description="Dark roast"
+      id="2"
+      name="Costa Rica"
+      region="Costa Rica"
+      thumbnail="https://goo.gl/TXRMV5"
+    />
+    <BeanCard
+      description="Dark roast"
+      id="3"
+      name="Kenya"
+      region="Indonesia"
+      thumbnail="https://goo.gl/vKVnG7"
+    />
+    <BeanCard
+      description="Dark roast"
+      id="4"
+      name="Kenya"
+      region="Indonesia"
+      thumbnail="https://goo.gl/vKVnG7"
+    />
+    <BeanCard
+      description="Dark roast"
+      id="5"
+      name="Kenya"
+      region="Indonesia"
+      thumbnail="https://goo.gl/vKVnG7"
+    />
+    <BeanCard
+      description="Dark roast"
+      id="6"
+      name="Kenya"
+      region="Indonesia"
+      thumbnail="https://goo.gl/vKVnG7"
+    />
   </div>
 </div>
 `;
