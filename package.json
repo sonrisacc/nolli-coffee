@@ -2,16 +2,15 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
+    "format":
+      "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "test": "jest",
     "testu": "jest -u",
     "watch": "webpack --watch"
   },
   "jest": {
-    "snapshotSerializers": [
-      "jest-serializer-enzyme"
-    ]
+    "snapshotSerializers": ["jest-serializer-enzyme"]
   },
   "dependencies": {
     "axios": "0.16.1",
@@ -25,6 +24,7 @@
     "react-addons-perf": "15.4.2",
     "react-dom": "15.5.4",
     "react-router-dom": "4.1.1",
+    "prop-types": "15.5.10",
     "styled-components": "2.0.0",
     "webpack": "2.6.1",
     "webpack-dev-middleware": "1.10.2",

@@ -5,17 +5,38 @@
       "name": "Sumatra",
       "region": "Indonesia",
       "description": "Dark roast",
-      "thumbnail": "https://goo.gl/wzvTCX"
+      "thumbnail": "https://goo.gl/vxTdPV"
     },
     {
       "id": "2",
       "name": "Costa Rica",
       "region": "Costa Rica",
       "description": "Dark roast",
-      "thumbnail": "https://goo.gl/bVLWKV"
+      "thumbnail": "https://goo.gl/TXRMV5"
     },
     {
       "id": "3",
+      "name": "Kenya",
+      "region": "Indonesia",
+      "description": "Dark roast",
+      "thumbnail": "https://goo.gl/vKVnG7"
+    },
+    {
+      "id": "4",
+      "name": "Kenya",
+      "region": "Indonesia",
+      "description": "Dark roast",
+      "thumbnail": "https://goo.gl/vKVnG7"
+    },
+    {
+      "id": "5",
+      "name": "Kenya",
+      "region": "Indonesia",
+      "description": "Dark roast",
+      "thumbnail": "https://goo.gl/vKVnG7"
+    },
+    {
+      "id": "6",
       "name": "Kenya",
       "region": "Indonesia",
       "description": "Dark roast",

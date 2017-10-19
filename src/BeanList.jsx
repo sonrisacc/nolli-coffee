@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import BeansData from '../exampleBeanData';
+import BeansData from '../exampleBeanData.json';
+import BeanCard from './BeanCard';
 
 class BeanList extends Component {
   state = {
@@ -9,6 +10,14 @@ class BeanList extends Component {
   handleSearchTermChange = event => {
     this.setState({ searchTerm: event.target.value });
   };
+
+  handleFilterBeansInput = () =>
+    BeansData.beans.filter(
+      cur =>
+        `${cur.name} ${cur.region} ${cur.description}`
+          .toUpperCase()
+          .indexOf(this.state.searchTerm.toUpperCase()) >= 0,
+    );
 
   render() {
     return (
@@ -22,7 +31,11 @@ class BeanList extends Component {
             value={this.state.searchTerm}
           />
         </header>
-        <div />
+        <div>
+          {this.handleFilterBeansInput().map(curBean => (
+            <BeanCard key={curBean.id} {...curBean} />
+          ))}
+        </div>
       </div>
     );
   }
