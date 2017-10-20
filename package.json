@@ -7,6 +7,7 @@
     "lint": "eslint **/*.{js,jsx} --quiet",
     "test": "jest",
     "testu": "jest -u",
+    "testcoverage": "jest --coverage ",
     "watch": "webpack --watch"
   },
   "jest": {
