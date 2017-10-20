@@ -16,31 +16,34 @@
     },
     {
       "id": "3",
-      "name": "Kenya",
-      "region": "Indonesia",
-      "description": "Dark roast",
+      "name": "Song bird",
+      "region": "Nicaraguan",
+      "description": "Light roast",
       "thumbnail": "https://goo.gl/vKVnG7"
     },
     {
       "id": "4",
-      "name": "Kenya",
-      "region": "Indonesia",
-      "description": "Dark roast",
-      "thumbnail": "https://goo.gl/vKVnG7"
+      "name": "Panama Gesha Perci Red",
+      "region": "Silla Del Pando, Volcan, Panama.",
+      "description": "Light roast",
+      "thumbnail":
+        "https://images-na.ssl-images-amazon.com/images/I/41AExHYKm1L.jpg"
     },
     {
       "id": "5",
-      "name": "Kenya",
-      "region": "Indonesia",
-      "description": "Dark roast",
-      "thumbnail": "https://goo.gl/vKVnG7"
+      "name": "Ironclad",
+      "region": "Gutemala",
+      "description": "Medium-light roast",
+      "thumbnail":
+        "http://dlo9n43mpvj20faa12i3i3lh.wpengine.netdna-cdn.com/wp-content/uploads/2017/09/IMG_4231-1024x1024.jpg"
     },
     {
       "id": "6",
-      "name": "Kenya",
-      "region": "Indonesia",
+      "name": "Dreamland blend",
+      "region": "Magnolia",
       "description": "Dark roast",
-      "thumbnail": "https://goo.gl/vKVnG7"
+      "thumbnail":
+        "http://dlo9n43mpvj20faa12i3i3lh.wpengine.netdna-cdn.com/wp-content/uploads/2017/08/Magnolia-Dreamlands-Blend.jpg"
     }
   ]
 }
