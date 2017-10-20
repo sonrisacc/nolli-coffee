@@ -17,3 +17,18 @@ test('BeanList should render correct amount of beans', () => {
   const component = shallow(<BeanList />);
   expect(component.find(BeanCard).length).toEqual(BeansData.beans.length);
 });
+
+test('Search should render correct amount of shows based on search term', () => {
+  const searchWord = 'light';
+  // simulare event, input is the target, simulate an event
+  const component = shallow(<BeanList />);
+  component.find('input').simulate('change', { target: { value: searchWord } });
+  const beanCounts = BeansData.beans.filter(
+    cur =>
+      `${cur.name} ${cur.region} ${cur.description}`
+        .toUpperCase()
+        .indexOf(searchWord.toUpperCase()) >= 0,
+  ).length;
+
+  expect(component.find(BeanCard).length).toEqual(beanCounts);
+});

@@ -31,32 +31,32 @@ exports[`BeanList renders correctly 1`] = `
       thumbnail="https://goo.gl/TXRMV5"
     />
     <BeanCard
-      description="Dark roast"
+      description="Light roast"
       id="3"
-      name="Kenya"
-      region="Indonesia"
+      name="Song bird"
+      region="Nicaraguan"
       thumbnail="https://goo.gl/vKVnG7"
     />
     <BeanCard
-      description="Dark roast"
+      description="Light roast"
       id="4"
-      name="Kenya"
-      region="Indonesia"
-      thumbnail="https://goo.gl/vKVnG7"
+      name="Panama Gesha Perci Red"
+      region="Silla Del Pando, Volcan, Panama."
+      thumbnail="https://images-na.ssl-images-amazon.com/images/I/41AExHYKm1L.jpg"
     />
     <BeanCard
-      description="Dark roast"
+      description="Medium-light roast"
       id="5"
-      name="Kenya"
-      region="Indonesia"
-      thumbnail="https://goo.gl/vKVnG7"
+      name="Ironclad"
+      region="Gutemala"
+      thumbnail="http://dlo9n43mpvj20faa12i3i3lh.wpengine.netdna-cdn.com/wp-content/uploads/2017/09/IMG_4231-1024x1024.jpg"
     />
     <BeanCard
       description="Dark roast"
       id="6"
-      name="Kenya"
-      region="Indonesia"
-      thumbnail="https://goo.gl/vKVnG7"
+      name="Dreamland blend"
+      region="Magnolia"
+      thumbnail="http://dlo9n43mpvj20faa12i3i3lh.wpengine.netdna-cdn.com/wp-content/uploads/2017/08/Magnolia-Dreamlands-Blend.jpg"
     />
   </div>
 </div>
