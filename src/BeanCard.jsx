@@ -1,5 +1,5 @@
+// @flow
 import React from 'react';
-import { string } from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -17,7 +17,12 @@ const Image = styled.img`
   margin-right: 10px;
 `;
 
-const BeanCard = props => (
+const BeanCard = (props: {
+  name: string,
+  region: string,
+  thumbnail: string,
+  description: string,
+}) => (
   <Wrapper>
     <Image alt={`${props.name} BeanCard`} src={`${props.thumbnail}`} />
     <div>
@@ -27,12 +32,5 @@ const BeanCard = props => (
     </div>
   </Wrapper>
 );
-
-BeanCard.propTypes = {
-  name: string.isRequired,
-  region: string.isRequired,
-  thumbnail: string.isRequired,
-  description: string.isRequired,
-};
 
 export default BeanCard;

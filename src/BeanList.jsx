@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import BeansData from '../exampleBeanData.json';
 import BeanCard from './BeanCard';
@@ -7,7 +9,9 @@ class BeanList extends Component {
     searchTerm: '',
   };
 
-  handleSearchTermChange = event => {
+  handleSearchTermChange = (
+    event: SyntheticKeyboardEvent & { target: HTMLInputElement },
+  ) => {
     this.setState({ searchTerm: event.target.value });
   };
 

@@ -2,6 +2,8 @@
 node_modules/
 public/bundle.js
 public/*bundle*
+coverage/
+flow-typed/npm/
 
 # system files #
 .DS_Store
