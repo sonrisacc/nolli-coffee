@@ -17,12 +17,7 @@ const Image = styled.img`
   margin-right: 10px;
 `;
 
-const BeanCard = (props: {
-  name: string,
-  region: string,
-  thumbnail: string,
-  description: string,
-}) => (
+const BeanCard = (props: Bean) => (
   <Wrapper>
     <Image alt={`${props.name} BeanCard`} src={`${props.thumbnail}`} />
     <div>

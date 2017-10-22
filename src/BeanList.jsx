@@ -1,12 +1,15 @@
 // @flow
 
 import React, { Component } from 'react';
-import BeansData from '../exampleBeanData.json';
 import BeanCard from './BeanCard';
 
 class BeanList extends Component {
   state = {
     searchTerm: '',
+  };
+
+  props: {
+    beans: Array<Bean>,
   };
 
   handleSearchTermChange = (
@@ -15,13 +18,15 @@ class BeanList extends Component {
     this.setState({ searchTerm: event.target.value });
   };
 
-  handleFilterBeansInput = () =>
-    BeansData.beans.filter(
+  handleFilterBeansInput = () => {
+    const beans = this.props.beans.filter(
       cur =>
         `${cur.name} ${cur.region} ${cur.description}`
           .toUpperCase()
           .indexOf(this.state.searchTerm.toUpperCase()) >= 0,
     );
+    return beans || [];
+  };
 
   render() {
     return (
