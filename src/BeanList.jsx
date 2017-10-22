@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import BeanCard from './BeanCard';
+import Header from './Header';
 
 class BeanList extends Component {
   state = {
@@ -31,15 +32,10 @@ class BeanList extends Component {
   render() {
     return (
       <div className="beanList">
-        <header>
-          <h1>Search your beans!</h1>
-          <input
-            type="text"
-            placeholder="Search"
-            onChange={this.handleSearchTermChange}
-            value={this.state.searchTerm}
-          />
-        </header>
+        <Header
+          searchTerm={this.state.searchTerm}
+          handleSearchTermChange={this.handleSearchTermChange}
+        />
         <div>
           {this.handleFilterBeansInput().map(curBean => (
             <BeanCard key={curBean.id} {...curBean} />
