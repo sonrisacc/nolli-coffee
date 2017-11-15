@@ -2,7 +2,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "server-dev": "node server/index.js",
+    "server-dev": "nodemon server/server.js",
     "format":
       "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
@@ -59,7 +59,7 @@
     "flow-bin": "0.47.0",
     "jest": "20.0.4",
     "jest-serializer-enzyme": "1.0.0",
-    "nodemon": "1.11.0",
+    "nodemon": "^1.12.1",
     "prettier": "^1.7.4",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "15.5.4",

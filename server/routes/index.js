@@ -1,10 +1,20 @@
 /* eslint no-console:0 */
-// require('babel-register');
-
+require('babel-register');
 // const bodyParser = require('body-parser');
 
-// const routes = require('express').Router();
+const express = require('express');
 
-// routes.use('/user', require(''))
+const routes = express.Router();
+// routes.use(bodyParser.urlencoded({ extended: true }));
+// routes.use(bodyParser.json());
 
-// module.exports = routes;
+routes.use('/bean', require('./bean'));
+routes.use('/user', require('./user'));
+routes.use('/brew', require('./brew'));
+
+// public landing page, will see list of beans
+routes.get('/beanlist', (req, res) => {
+  res.send('GET for /beanList is working');
+});
+
+module.exports = routes;
