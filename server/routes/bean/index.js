@@ -21,6 +21,8 @@ routes.get('/wishlist', (req, res) => {
 });
 
 // user's own purchase history of beans
+// should post total weight, and rosted date
+// mark, add to brewlist
 routes.get('/purchased', (req, res) => {
   res.send('GET for /bean/wishlist is working');
 });
