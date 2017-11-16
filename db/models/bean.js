@@ -9,6 +9,7 @@ exports.BeanSchema = (sequelize, DataTypes) => {
   });
 
   Bean.associate = models => {
+    Bean.hasMany(models.roast_pack);
     Bean.belongsTo(models.brand);
     Bean.belongsTo(models.region);
     Bean.belongsToMany(models.user, {

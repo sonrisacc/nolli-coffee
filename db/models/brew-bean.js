@@ -12,7 +12,8 @@ exports.BrewBeanSchema = (sequelize, DataTypes) => {
   });
 
   BrewBean.associate = models => {
-    BrewBean.belongsTo(models.bean);
+    BrewBean.belongsTo(models.roast_pack);
+    BrewBean.belongsTo(models.user);
   };
 
   return BrewBean;

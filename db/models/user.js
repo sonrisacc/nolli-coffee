@@ -10,35 +10,13 @@ exports.UserSchema = (sequelize, DataTypes) => {
   });
 
   User.associate = models => {
-    User.hasMany(models.roast_bean);
+    User.hasMany(models.brew_bean);
+    User.hasMany(models.roast_pack);
     User.belongsToMany(models.bean, {
       through: {
         model: models.bean_user,
       },
     });
   };
-
   return User;
 };
-
-/*
-Post.belongsToMany(Tag, {
-  through: {
-    model: ItemTag,
-    unique: false,
-    scope: {
-      taggable: 'post'
-    }
-  },
-  foreignKey: 'taggable_id',
-  constraints: false
-});
-Tag.belongsToMany(Post, {
-  through: {
-    model: ItemTag,
-    unique: false
-  },
-  foreignKey: 'tag_id',
-  constraints: false
-});
-*/
