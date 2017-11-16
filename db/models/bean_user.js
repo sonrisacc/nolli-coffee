@@ -5,9 +5,5 @@ exports.BeanUserSchema = (sequelize, DataTypes) => {
     watched: DataTypes.BOOLEAN,
   });
 
-  BeanUser.associate = models => {
-    BeanUser.belongsTo(models.bean);
-  };
-
   return BeanUser;
 };
