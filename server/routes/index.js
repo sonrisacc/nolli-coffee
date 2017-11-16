@@ -11,6 +11,7 @@ const routes = express.Router();
 routes.use('/bean', require('./bean'));
 routes.use('/user', require('./user'));
 routes.use('/brew', require('./brew'));
+routes.use('/auth', require('./auth'));
 
 // public landing page, will see list of beans
 routes.get('/beanlist', (req, res) => {

@@ -1,15 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const authCtrl = require('./authCtrl.js');
 
 const routes = express.Router();
 routes.use(bodyParser.urlencoded({ extended: true }));
 routes.use(bodyParser.json());
 
-routes.get('/facebook', (req, res) => {
-  res.send('GET for /auth/facebook is working');
-});
-
-routes.get('/google', (req, res) => {
-  res.send('GET for /auth/google is working');
-});
+routes.get('/facebook', authCtrl.facebookAuth);
+routes.get('/google', authCtrl.googleAuth);
 module.exports = routes;
