@@ -9,9 +9,10 @@ db.sequelize
   .then(() => db.sequelize.drop())
   // .then(() => createTable(`${__dirname}/models`, db.sequelize))
   .then(() => db.sequelize.sync())
-  .then(() =>
-    Promise.all([seedTable.dbcreatUser(db), seedTable.dbcreatBean(db)]),
-  )
+  // .then(() =>
+  //   Promise.all([seedTable.dbcreatUser(db), seedTable.dbcreatBean(db)]),
+  // )
+  .then(() => seedTable(db))
   .then(() => db.sequelize.close())
   .catch(err => {
     console.error('Unable to connect to the database:', err);
