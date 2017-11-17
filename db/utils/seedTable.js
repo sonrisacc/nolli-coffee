@@ -1,8 +1,8 @@
 /* eslint no-console:0 */
 // const path = require('path');
-// const db = require('../dbconfig.js');
+const db = require('../dbconfig.js');
 
-const dbcreatUser = db => {
+const dbcreatUser = () => {
   db.user.create(
     {
       username: 'sonrisa chen',
@@ -12,13 +12,13 @@ const dbcreatUser = db => {
       avatar: 'https://avatars2.githubusercontent.com/u/31486494?v=4&s=200',
       accessToken: 'abc123',
     },
-    {
-      include: [db.bean],
-    },
+    // {
+    //   include: [db.bean],
+    // },
   );
 };
 
-const dbcreatBean = db =>
+const dbcreatBean = () =>
   db.bean.create({
     bean_name: 'Ethiopia Gedeb Halo Beriti',
     rating: 94,
