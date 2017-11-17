@@ -1,4 +1,4 @@
-exports.RegionSchema = (sequelize, DataTypes) => {
+module.exports = function RegionSchema(sequelize, DataTypes) {
   const Region = sequelize.define('region', {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
     origin: DataTypes.STRING,

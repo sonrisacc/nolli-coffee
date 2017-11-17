@@ -1,4 +1,4 @@
-exports.BrandSchema = (sequelize, DataTypes) => {
+module.exports = function BrandSchema(sequelize, DataTypes) {
   const Brand = sequelize.define('brand', {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
     brand_name: DataTypes.STRING,

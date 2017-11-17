@@ -1,4 +1,4 @@
-exports.RoastPackSchema = (sequelize, DataTypes) => {
+module.exports = function RoastPackSchema(sequelize, DataTypes) {
   const RoastPack = sequelize.define('roast_pack', {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
     roast_date: DataTypes.STRING,

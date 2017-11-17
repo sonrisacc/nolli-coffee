@@ -1,4 +1,4 @@
-exports.BeanSchema = (sequelize, DataTypes) => {
+module.exports = function BeanSchema(sequelize, DataTypes) {
   const Bean = sequelize.define('bean', {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
     bean_name: DataTypes.STRING,

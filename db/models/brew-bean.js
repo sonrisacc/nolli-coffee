@@ -1,4 +1,4 @@
-exports.BrewBeanSchema = (sequelize, DataTypes) => {
+module.exports = function BrewBeanSchema(sequelize, DataTypes) {
   const BrewBean = sequelize.define('brew_bean', {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
     brew_date: DataTypes.STRING,

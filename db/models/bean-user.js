@@ -1,4 +1,4 @@
-exports.BeanUserSchema = (sequelize, DataTypes) => {
+module.exports = function BeanUserSchema(sequelize, DataTypes) {
   const BeanUser = sequelize.define('bean_user', {
     starred: DataTypes.BOOLEAN,
     purchased: DataTypes.BOOLEAN,
