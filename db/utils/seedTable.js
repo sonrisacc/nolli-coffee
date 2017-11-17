@@ -1,8 +1,8 @@
 /* eslint no-console:0 */
 // const path = require('path');
-const db = require('../dbconfig.js');
+// const db = require('../dbconfig.js');
 
-const dbcreatUser = () => {
+const dbcreatUser = db => {
   db.user.create(
     {
       username: 'sonrisa chen',
@@ -18,7 +18,7 @@ const dbcreatUser = () => {
   );
 };
 
-const dbcreatBean = () =>
+const dbcreatBean = db =>
   db.bean.create({
     bean_name: 'Ethiopia Gedeb Halo Beriti',
     rating: 94,

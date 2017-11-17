@@ -3,17 +3,17 @@
     "build": "webpack",
     "dev": "webpack-dev-server",
     "server-dev": "nodemon server/server.js",
-    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
+    "format":
+      "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "test": "jest",
     "testu": "jest -u",
     "testcoverage": "jest --coverage ",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "seed": "node db/seedDB.js"
   },
   "jest": {
-    "snapshotSerializers": [
-      "jest-serializer-enzyme"
-    ]
+    "snapshotSerializers": ["jest-serializer-enzyme"]
   },
   "dependencies": {
     "axios": "0.16.1",

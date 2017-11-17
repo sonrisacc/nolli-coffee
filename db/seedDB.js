@@ -1,20 +1,18 @@
 /* eslint no-console:0 */
 
 const db = require('./dbconfig.js');
-const createTable = require('./utils/readModels.js');
+// const createTable = require('./utils/readModels.js');
 const seedTable = require('./utils/seedTable.js');
 
-db
+db.sequelize
   .authenticate()
-  .then(() => createTable(`${__dirname}/models`, db))
-  .then(dbModels =>
-    Promise.all([
-      seedTable.dbcreatUser(dbModels),
-      seedTable.dbcreatBean(dbModels),
-    ]),
+  .then(() => db.sequelize.drop())
+  // .then(() => createTable(`${__dirname}/models`, db.sequelize))
+  .then(() => db.sequelize.sync())
+  .then(() =>
+    Promise.all([seedTable.dbcreatUser(db), seedTable.dbcreatBean(db)]),
   )
-  .then(() => db.sync())
-  .then(() => db.close())
+  .then(() => db.sequelize.close())
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
