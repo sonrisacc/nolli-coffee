@@ -19,13 +19,10 @@ const sequelize = new Sequelize('nolicoffee', 'postgres', 'root', {
 
 const db = {};
 
-fs
-  .readdirSync(path.join(__dirname, '/models'))
-  // .filter(file => file.indexOf('.') !== 0 && file !== 'index.js')
-  .forEach(file => {
-    const model = sequelize.import(path.join(__dirname, '/models/', file));
-    db[model.name] = model;
-  });
+fs.readdirSync(path.join(__dirname, '/models')).forEach(file => {
+  const model = sequelize.import(path.join(__dirname, '/models/', file));
+  db[model.name] = model;
+});
 
 Object.keys(db).forEach(modelName => {
   if ('associate' in db[modelName]) {
