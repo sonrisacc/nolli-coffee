@@ -48,11 +48,11 @@ const dbcreatBean = db =>
 //       aroma: data.aroma,
 //       body: data.body,
 //       withMilk: data.withMilk,
-//       brands: {
+//       brand: {
 //         brand_name: data.brand,
 //         brand_url: data.brandUrl,
 //       },
-//       regions: {
+//       region: {
 //         origin: data.origin,
 //         location: data.location,
 //       },
@@ -73,9 +73,6 @@ const dbBulkCreate = db =>
   );
 
 module.exports = dbBulkCreate;
-
-
-
 
 module.exports = function BeanUserSchema(sequelize, DataTypes) {
   const BeanUser = sequelize.define('bean_user', {

@@ -6,15 +6,14 @@ const seedTable = require('./utils/seedTable.js');
 
 db.sequelize
   .authenticate()
-
+  .then(() => db.sequelize.drop())
   // .then(() => createTable(`${__dirname}/models`, db.sequelize))
-  .then(() => db.sequelize.sync({ force: true }))
+  .then(() => db.sequelize.sync())
   // .then(() =>
   //   Promise.all([seedTable.dbcreatUser(db), seedTable.dbcreatBean(db)]),
   // )
   .then(() => seedTable(db))
   .then(() => db.sequelize.close())
-  .then(console.log('Whole process complete!'))
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
