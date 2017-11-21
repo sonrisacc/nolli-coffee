@@ -3,6 +3,7 @@ require('babel-register');
 // const bodyParser = require('body-parser');
 
 const express = require('express');
+const db = require('../../db/dbconfig.js');
 
 const routes = express.Router();
 // routes.use(bodyParser.urlencoded({ extended: true }));
@@ -15,6 +16,7 @@ routes.use('/auth', require('./auth'));
 
 // public landing page, will see list of beans
 routes.get('/beanlist', (req, res) => {
+  // db.bean.findAll()
   res.send('GET for /beanList is working');
 });
 

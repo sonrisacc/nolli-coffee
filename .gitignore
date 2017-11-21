@@ -4,7 +4,7 @@ public/bundle.js
 public/*bundle*
 coverage/
 flow-typed/npm/
-db/seeds/
+db/seeds/beans.js
 
 
 # system files #

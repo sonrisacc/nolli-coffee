@@ -1,3 +1,4 @@
+const db = require('../../../db/dbconfig.js');
 exports.showMapView = (req, res) => {
   res.send('GET for /bean/map is working');
 };

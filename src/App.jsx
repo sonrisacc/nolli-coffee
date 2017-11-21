@@ -10,7 +10,7 @@ import BeanList from './BeanList';
 import PageNotFound from './PageNotFound';
 import BeanBrewDetail from './BeanBrewDetail';
 
-import BeansData from '../db/exampleBeanData.json';
+import BeansData from './../db/seeds/exampleBeanData.json';
 
 const App = () => (
   <BrowserRouter>
