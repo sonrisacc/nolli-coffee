@@ -4,7 +4,10 @@ module.exports = function BeanSchema(sequelize, DataTypes) {
     {
       id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
       rating: DataTypes.STRING,
-      bean_name: DataTypes.STRING,
+      bean_name: {
+        type: DataTypes.STRING,
+        // unique: true,
+      },
       review_date: DataTypes.STRING,
       price: DataTypes.STRING,
       detail_url: DataTypes.STRING,
