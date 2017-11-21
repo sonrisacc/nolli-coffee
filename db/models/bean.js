@@ -12,7 +12,7 @@ module.exports = function BeanSchema(sequelize, DataTypes) {
       roast: DataTypes.STRING,
       agtron: DataTypes.STRING,
       aroma: DataTypes.STRING,
-      body: DataTypes.STRING,
+      acidity: DataTypes.STRING,
       withMilk: DataTypes.STRING,
     },
     // {

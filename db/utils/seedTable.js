@@ -35,44 +35,28 @@ const dbcreatBean = db =>
   );
 */
 
-/* Create multiple beans with duplicates though
-const dbcreatBean = (db, data) =>
-  db.bean.create(
-    {
-      rating: data.rating,
-      bean_name: data.bean,
-      review_date: data.reviewDate,
-      price: data.price,
-      detail_url: data.beanUrl,
-      logo_url: data.logo,
-      roast: data.roast,
-      agtron: data.agtron,
-      aroma: data.aroma,
-      body: data.body,
-      withMilk: data.withMilk,
-      brand: {
-        brand_name: data.brand,
-        brand_url: data.brandUrl,
-      },
-      region: {
-        origin: data.origin,
-        location: data.location,
-      },
-    },
-    {
-      include: [db.brand, db.region],
-    },
-  );
-
-const beanSeedHandler = db =>
-  Promise.all(beanSeedData.map(cur => dbcreatBean(db, cur)));
-*/
+const dbcreatBean = (db, data, cache) =>
+  db.bean.create({
+    rating: data.rating,
+    bean_name: data.bean,
+    review_date: data.reviewDate,
+    price: data.price,
+    detail_url: data.beanUrl,
+    logo_url: data.logo,
+    roast: data.roast,
+    agtron: data.agtron,
+    aroma: data.aroma,
+    acidity: data.acidity || 0,
+    withMilk: data.withMilk || 0,
+    brandId: cache.brand,
+    regionId: cache.origion,
+  });
 
 const dbMapBrand = (db, data) =>
   new Promise((resolve, reject) => {
-    const cache = {};
+    let cache = {};
     data.forEach(cur => {
-      if (!cache[cur.brand]) {
+      if (!cache[cur.brand] && !!cur.brand) {
         cache[cur.brand] = cur.brand;
         db.brand
           .create({
@@ -83,14 +67,15 @@ const dbMapBrand = (db, data) =>
           .catch(err => reject(err));
       }
     });
+    cache = {};
     resolve();
   });
 
 const dbMapRegion = (db, data) =>
   new Promise((resolve, reject) => {
-    const cache = {};
+    let cache = {};
     data.forEach(cur => {
-      if (!cache[cur.origin]) {
+      if (!cache[cur.origin] && !!cur.origin) {
         cache[cur.origin] = cur.origin;
         db.region
           .create({
@@ -101,10 +86,60 @@ const dbMapRegion = (db, data) =>
           .catch(err => reject(err));
       }
     });
+    cache = {};
     resolve();
   });
 
-const beanSeedHandler = (db, data) =>
-  Promise.all([dbMapRegion(db, data), dbMapBrand(db, data)]);
+// const dbMapBeans = (db, data) =>
+//   new Promise((resolve, reject) => {
+//     const cacheBean = {};
+//     data.forEach(cur => {
+//       if (cur.origion) {
+//         db.brand.findOne({ where: { brand_name: cur.brand } }).then(brand => {
+//           cacheBean.brand = brand.id;
+//           db.region.findOne({ where: { origin: cur.origin } }).then(region => {
+//             console.log('1212121212121', region);
+//             cacheBean.origion = region.id;
+//             dbcreatBean(db, data, cacheBean)
+//               .then(console.log('bean inserted'))
+//               .catch(err => reject(err));
+//           });
+//         });
+//       }
+//     });
+//     resolve();
+//   });
 
-module.exports = beanSeedHandler;
+const dbMapBean = (db, cur) =>
+  new Promise((resolve, reject) => {
+    console.log('115 dbMapBean running');
+    const cacheBean = {};
+    if (cur.location) {
+      console.log('118 dbMapBean running');
+      db.brand.findOne({ where: { brand_name: cur.brand } }).then(brand => {
+        cacheBean.brand = brand.id;
+        db.region.findOne({ where: { origin: cur.origin } }).then(region => {
+          console.log('1212121212121 running', region.id);
+          cacheBean.origion = region.id;
+          dbcreatBean(db, cur, cacheBean)
+            .then(() => {
+              console.log('bean inserted');
+              resolve();
+            })
+            .catch(err => reject(err));
+        });
+      });
+    } else {
+      console.log('133 running');
+      resolve();
+    }
+  });
+
+const dbBeans = (db, data) => Promise.all(data.map(cur => dbMapBean(db, cur)));
+
+const dbRegionBrand = (db, data) =>
+  Promise.all([dbMapRegion(db, data), dbMapBrand(db, data)]);
+// .then(() =>
+// dbMapBeans(db, data),
+
+module.exports = { dbRegionBrand, dbBeans };

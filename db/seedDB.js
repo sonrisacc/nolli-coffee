@@ -13,7 +13,8 @@ db.sequelize
   // .then(() =>
   //   Promise.all([seedTable.dbcreatUser(db), seedTable.dbcreatBean(db)]),
   // )
-  .then(() => seedTable(db, beanSeedData))
+  .then(() => seedTable.dbRegionBrand(db, beanSeedData))
+  .then(() => seedTable.dbBeans(db, beanSeedData))
   .then(() => db.sequelize.close())
   .then(console.log('Whole process complete!'))
   .catch(err => {
