@@ -1,5 +1,4 @@
 /* eslint no-console:0 */
-const beanSeedData = require('../seeds/beans.js');
 
 /*
 const dbcreatUser = db => {
@@ -69,29 +68,43 @@ const beanSeedHandler = db =>
   Promise.all(beanSeedData.map(cur => dbcreatBean(db, cur)));
 */
 
-const dbMapBrand = (db, data) => {
-  data.forEach(cur => {
-    db.brand
-      .findOne({
-        where: {
-          brand_name: cur.brand,
-        },
-      })
-      .then(brand => console.log('brand', brand))
-      .catch(err => console.log('err', err));
+const dbMapBrand = (db, data) =>
+  new Promise((resolve, reject) => {
+    const cache = {};
+    data.forEach(cur => {
+      if (!cache[cur.brand]) {
+        cache[cur.brand] = cur.brand;
+        db.brand
+          .create({
+            brand_name: cur.brand,
+            brand_url: cur.brandUrl,
+          })
+          .then(console.log('brand inserted'))
+          .catch(err => reject(err));
+      }
+    });
+    resolve();
   });
-};
 
-// const dbMapRegion = data =>
-//   return data.map(cur => ({
-//     origin: cur.origin,
-//     location: cur.location,
-//   }));
+const dbMapRegion = (db, data) =>
+  new Promise((resolve, reject) => {
+    const cache = {};
+    data.forEach(cur => {
+      if (!cache[cur.origin]) {
+        cache[cur.origin] = cur.origin;
+        db.region
+          .create({
+            origin: cur.origin,
+            location: cur.location,
+          })
+          .then(console.log('region inserted'))
+          .catch(err => reject(err));
+      }
+    });
+    resolve();
+  });
 
-const beanSeedHandler = db =>
-  // Promise.all([
-  // db.brand.bulkCreate(dbMapBrand(beanSeedData));
-  // db.region.bulkCreate(dbMapRegion(beanSeedData)),
-  // ]);
+const beanSeedHandler = (db, data) =>
+  Promise.all([dbMapRegion(db, data), dbMapBrand(db, data)]);
 
-  (module.exports = beanSeedHandler);
+module.exports = beanSeedHandler;

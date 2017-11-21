@@ -1,6 +1,7 @@
 /* eslint no-console:0 */
 
 const db = require('./dbconfig.js');
+const beanSeedData = require('./seeds/beans.js');
 // const createTable = require('./utils/readModels.js');
 const seedTable = require('./utils/seedTable.js');
 
@@ -12,7 +13,7 @@ db.sequelize
   // .then(() =>
   //   Promise.all([seedTable.dbcreatUser(db), seedTable.dbcreatBean(db)]),
   // )
-  .then(() => seedTable(db))
+  .then(() => seedTable(db, beanSeedData))
   .then(() => db.sequelize.close())
   .then(console.log('Whole process complete!'))
   .catch(err => {
