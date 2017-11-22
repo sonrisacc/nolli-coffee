@@ -1,10 +1,13 @@
 // @flow
 import React, { Component } from 'react';
+// import axios from 'axios';
 import Header from './Header';
 // import Spinner from './Spinner';
 
 class BeanBrewDetail extends Component {
-  state = {};
+  state = {
+    beanData: { beanRating: '' },
+  };
   componentDidMount() {}
   props: { bean: Bean };
 
