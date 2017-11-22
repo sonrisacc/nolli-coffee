@@ -1,13 +1,13 @@
 /* eslint no-console:0 */
-require('babel-register');
-// const bodyParser = require('body-parser');
+// require('babel-register');
+const bodyParser = require('body-parser');
 
 const express = require('express');
 const db = require('../../db/dbconfig.js');
 
 const routes = express.Router();
-// routes.use(bodyParser.urlencoded({ extended: true }));
-// routes.use(bodyParser.json());
+routes.use(bodyParser.urlencoded({ extended: true }));
+routes.use(bodyParser.json());
 
 routes.use('/bean', require('./bean'));
 routes.use('/user', require('./user'));
@@ -16,8 +16,9 @@ routes.use('/auth', require('./auth'));
 
 // public landing page, will see list of beans
 routes.get('/beanlist', (req, res) => {
-  // db.bean.findAll()
-  res.send('GET for /beanList is working');
+  db.bean
+    .findAll({ limit: 20, order: [['rating', 'DESC']] })
+    .then(beans => res.status(202).json(beans));
 });
 
 module.exports = routes;

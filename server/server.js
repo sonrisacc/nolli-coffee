@@ -1,5 +1,5 @@
 /* eslint no-console:0 */
-require('babel-register');
+// require('babel-register');
 
 const path = require('path');
 const routes = require('./routes');

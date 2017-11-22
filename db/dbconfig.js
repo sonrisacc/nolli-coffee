@@ -3,10 +3,10 @@
 const Sequelize = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-// const Op = Sequelize.Op;
-// const operatorsAliases = {
-//   $gt: Op.gt,
-// };
+const Op = Sequelize.Op;
+const operatorsAliases = {
+  $gt: Op.gt,
+};
 const sequelize = new Sequelize('nolicoffee', 'postgres', 'root', {
   host: 'localhost',
   dialect: 'postgres',
@@ -15,6 +15,7 @@ const sequelize = new Sequelize('nolicoffee', 'postgres', 'root', {
     min: 0,
     idle: 10000,
   },
+  operatorsAliases,
 });
 
 const db = {};
