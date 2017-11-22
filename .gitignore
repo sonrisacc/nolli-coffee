@@ -1,5 +1,6 @@
 # folder #
 node_modules/
+public/
 public/bundle.js
 public/*bundle*
 coverage/
