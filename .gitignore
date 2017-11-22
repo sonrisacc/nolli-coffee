@@ -12,6 +12,7 @@ db/seeds/beans.js
 .DS_Store?
 *.bundle.js
 *.hot-update.js
+
 # config files #
 .eslintrc.json
 .eslintignore

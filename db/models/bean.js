@@ -17,6 +17,7 @@ module.exports = function BeanSchema(sequelize, DataTypes) {
       aroma: DataTypes.STRING,
       acidity: DataTypes.STRING,
       withMilk: DataTypes.STRING,
+      notes: DataTypes.TEXT,
     },
     // {
     //   hooks: {

@@ -2,11 +2,13 @@
 
 export type Bean = {
   id: string,
-  name: string,
-  region: string,
-  thumbnail: string,
-  description: string,
-  detail: string,
+  brandId: string,
+  roast: string,
+  logo_url: string,
+  detail_url: string,
+  acidity: string,
+  bean_name: string,
+  notes: string,
 };
 
 declare var module: {

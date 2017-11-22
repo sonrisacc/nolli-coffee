@@ -8,7 +8,7 @@ import Header from './Header';
 class BeanList extends Component {
   state = {
     searchTerm: '',
-    beanList: '',
+    beanList: this.props.beans,
   };
 
   componentDidMount() {
@@ -16,7 +16,6 @@ class BeanList extends Component {
       .get('http://127.0.0.1:1337/beanlist')
       .then(resData => {
         this.setState({ beanList: resData.data });
-        console.log('line 16', this.state.beanList);
       })
       .catch(err => console.log(err));
   }
@@ -32,9 +31,9 @@ class BeanList extends Component {
   };
 
   handleFilterBeansInput = () => {
-    const beans = this.props.beans.filter(
+    const beans = this.state.beanList.filter(
       cur =>
-        `${cur.name} ${cur.region} ${cur.description}`
+        `${cur.bean_name} ${cur.roast} ${cur.detail_url}`
           .toUpperCase()
           .indexOf(this.state.searchTerm.toUpperCase()) >= 0,
     );

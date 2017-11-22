@@ -19,11 +19,11 @@ const Image = styled.img`
 
 const BeanCard = (props: Bean) => (
   <Wrapper>
-    <Image alt={`${props.name} BeanCard`} src={`${props.thumbnail}`} />
+    <Image alt={`${props.bean_name} BeanCard`} src={`${props.logo_url}`} />
     <div>
-      <h3>{props.name}</h3>
-      <h4>({props.region})</h4>
-      <p>{props.description}</p>
+      <h3>{props.bean_name}</h3>
+      <h4>({props.roast})</h4>
+      <p>{props.notes}</p>
     </div>
   </Wrapper>
 );

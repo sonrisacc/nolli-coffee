@@ -52,6 +52,7 @@ const dbcreatBean = (db, data, cache) =>
     withMilk: data.withMilk || 0,
     brandId: cache.brand,
     regionId: cache.origion,
+    notes: data.notes,
   });
 
 const dbMapBean = (db, cur) =>
