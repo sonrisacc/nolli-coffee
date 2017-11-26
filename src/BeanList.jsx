@@ -1,24 +1,13 @@
 // @flow
 /* eslint no-console:0 */
 import React, { Component } from 'react';
-import axios from 'axios';
 import BeanCard from './BeanCard';
 import Header from './Header';
 
 class BeanList extends Component {
   state = {
     searchTerm: '',
-    beanList: this.props.beans,
   };
-
-  componentDidMount() {
-    axios
-      .get('http://127.0.0.1:1337/beanlist')
-      .then(resData => {
-        this.setState({ beanList: resData.data });
-      })
-      .catch(err => console.log(err));
-  }
 
   props: {
     beans: Array<Bean>,
@@ -31,7 +20,7 @@ class BeanList extends Component {
   };
 
   handleFilterBeansInput = () => {
-    const beans = this.state.beanList.filter(
+    const beans = this.props.beans.filter(
       cur =>
         `${cur.bean_name} ${cur.roast} ${cur.detail_url}`
           .toUpperCase()
@@ -41,6 +30,7 @@ class BeanList extends Component {
   };
 
   render() {
+    console.log(this.props.beans);
     return (
       <div className="beanList">
         <Header

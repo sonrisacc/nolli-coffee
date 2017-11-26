@@ -9,6 +9,8 @@ export type Bean = {
   acidity: string,
   bean_name: string,
   notes: string,
+  rating: number,
+  price: string,
 };
 
 declare var module: {

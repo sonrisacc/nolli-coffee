@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   width: 32%;
@@ -9,6 +10,8 @@ const Wrapper = styled.div`
   margin-bottom: 25px;
   padding-right: 10px;
   overflow: hidden;
+  color: black;
+  text-decoration: none;
 `;
 
 const Image = styled.img`
@@ -18,14 +21,16 @@ const Image = styled.img`
 `;
 
 const BeanCard = (props: Bean) => (
-  <Wrapper>
-    <Image alt={`${props.bean_name} BeanCard`} src={`${props.logo_url}`} />
-    <div>
-      <h3>{props.bean_name}</h3>
-      <h4>({props.roast})</h4>
-      <p>{props.notes}</p>
-    </div>
-  </Wrapper>
+  <Link to={`/bean/${props.id}`}>
+    <Wrapper>
+      <Image alt={`${props.bean_name} BeanCard`} src={`${props.logo_url}`} />
+      <div>
+        <h3>{props.bean_name}</h3>
+        <h4>{props.roast}</h4>
+        <p>{props.price}</p>
+      </div>
+    </Wrapper>
+  </Link>
 );
 
 export default BeanCard;
