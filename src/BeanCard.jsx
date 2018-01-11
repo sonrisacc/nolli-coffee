@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -20,17 +20,28 @@ const Image = styled.img`
   margin-right: 10px;
 `;
 
-const BeanCard = (props: Bean) => (
-  <Link to={`/bean/${props.id}`}>
-    <Wrapper>
-      <Image alt={`${props.bean_name} BeanCard`} src={`${props.logo_url}`} />
-      <div>
-        <h3>{props.bean_name}</h3>
-        <h4>{props.roast}</h4>
-        <p>{props.price}</p>
-      </div>
-    </Wrapper>
-  </Link>
-);
+class BeanCard extends Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+  props: Bean;
+  render() {
+    return (
+      <Link to={`/bean/${this.props.id}`}>
+        <Wrapper>
+          <Image
+            alt={`${this.props.bean_name} BeanCard`}
+            src={`${this.props.logo_url}`}
+          />
+          <div>
+            <h3>{this.props.bean_name}</h3>
+            <h4>{this.props.roast}</h4>
+            <p>{this.props.price}</p>
+          </div>
+        </Wrapper>
+      </Link>
+    );
+  }
+}
 
 export default BeanCard;
