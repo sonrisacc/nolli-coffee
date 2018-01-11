@@ -17,7 +17,7 @@ routes.use('/auth', require('./auth'));
 // public landing page, will see list of beans
 routes.get('/beanlist', (req, res) => {
   db.bean
-    .findAll({ limit: 30, order: [['rating', 'DESC']] })
+    .findAll({ order: [['rating', 'DESC']] })
     .then(beans => res.status(202).json(beans));
 });
 
